@@ -19,8 +19,10 @@ class Client(Person):
         super().__init__(name, age)
         self.sales = []
         self.total = 0
+        self.value = 0
 
     def register_sale(self, value):
+        self.value = value
         self.sales.append(value)
         self.last_sale_date = datetime.now()
         return self.last_sale_date
@@ -53,13 +55,14 @@ def main():
 
     salesperson = Salesperson("Vendedor 1", 25, 2000)
     print(salesperson)
-    print(salesperson.salary)
 
-    sales = Sales("Vendedor 1", datetime.now, Client.register_sale(300))
-    print(sales)
+    sales = Sales("Vendedor 1", client.register_sale(value=300), client.value)
+    sales = Sales("Vendedor 1", client.register_sale(value=500), client.value)
+    sales = Sales("Vendedor 1", client.register_sale(value=200), client.value)
     
     print(client.get_last_sale_date())
     print(client.sales_total())
+
 
 if __name__ == '__main__':
     main()
