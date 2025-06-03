@@ -1,11 +1,10 @@
 class SimpleClass():
+    _counter = 0
+    
     def __init__(self):
-        pass
-
-    def counter(self):
-        pass
+        SimpleClass._counter += 1
 
 
 if __name__ == "__main__":
     lista = [SimpleClass(), SimpleClass()]
-    print(SimpleClass.counter)  # Esperado 2
+    print(SimpleClass._counter)  # Esperado 2
