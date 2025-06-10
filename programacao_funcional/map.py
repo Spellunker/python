@@ -15,3 +15,14 @@ just_ages = map(lambda n: n["age"], list_2)
 print(sum(just_ages))
 
 # challenge: using map return phrase "<name> has <age> years"
+names = map(lambda n: n["name"], list_2)
+ages = map(lambda n: n["age"], list_2)
+for name, age in zip(names, ages):
+    print(f"{name} has {age} years")
+
+phrases = map(lambda p: f"{p['name']} has {p['age']} years", list_2)
+print(list(phrases))
+
+phrases = map(lambda p: f"{p['name']} has {p['age']} years", list_2)
+for phrase in phrases:
+    print(str(phrase))
