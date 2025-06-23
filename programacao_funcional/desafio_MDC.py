@@ -1,9 +1,15 @@
 def gcd(numbers):
     lista = sorted(numbers)
     for possible_number in range(lista[0], 0, -1):
-        # Do a loop where it tries the mod % of the possible numbers within the numbers inside the lista
-        # If all mods returns 0, then the possible number is the gcd
-        # If none of the numbers is the gcd, then the number 1 will be the gcd
+        counter = 0
+        for number in numbers:
+            if number % possible_number != 0:
+                break
+            else:
+                counter += 1
+
+        if counter == len(numbers):
+            return f"{possible_number} is the gcd!"
 
 
 if __name__ == "__main__":
