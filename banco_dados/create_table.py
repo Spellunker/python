@@ -1,3 +1,4 @@
+from mysql.connector.errors import ProgrammingError
 from db import new_connection
 
 contact_table = """
