@@ -18,5 +18,4 @@ def new_connection():
         yield connection
     finally:
         if (connection and connection.is_connected()):
-            print("Finally")
             connection.close()

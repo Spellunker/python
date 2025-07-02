@@ -12,7 +12,7 @@ args = (
     ("Pedro", "98762-4321"),
     )
 
-with new_connection()  as connection:
+with new_connection() as connection:
     try:
         cursor = connection.cursor()
         cursor.executemany(sql, args)
